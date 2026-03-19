@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClipMaker | AI Viral Moments</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -30,7 +30,7 @@
             <div class="flex items-center space-x-2 title-el">
                 <div
                     class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-900/20">
-                    <i data-lucide="zap" class="w-5 h-5 text-white fill-current"></i>
+                    <i data-lucide="clapperboard" class="w-5 h-5 text-white"></i>
                 </div>
                 <span class="text-xl font-bold tracking-tighter">ClipMaker</span>
             </div>
@@ -38,9 +38,9 @@
 
         <div class="w-full max-w-4xl flex flex-col items-center text-center mt-40 px-10">
 
-            <div class="flex flex-col items-center space-y-6 mb-16 opacity-0 cta-el">
-                
-                <div class="w-full max-w-md relative group">
+            <div class="w-full flex items-center justify-between gap-4">
+
+                <div class="relative group flex-1 max-w-lg">
                     <div
                         class="absolute -inset-0.5 bg-gradient-to-r from-lime-600 to-red-600 rounded-xl opacity-25 group-hover:opacity-50 transition duration-500 blur">
                     </div>
@@ -49,35 +49,26 @@
                         <div class="pl-4 pr-2">
                             <i data-lucide="key" class="w-5 h-5 text-slate-400"></i>
                         </div>
-                        <input id="api-key" type="password"
-                            class="w-full bg-transparent text-slate-200 placeholder-slate-500 px-2 py-4 focus:outline-none text-base"
-                            placeholder="Cole sua Gemini API Key..." />
+                        <div class="flex-1">
+                            <input id="api-key" type="password"
+                                class="w-full bg-transparent text-slate-200 placeholder-slate-500 px-2 py-4 focus:outline-none text-base"
+                                placeholder="Cole sua Gemini API Key..." />
+                        </div>
                     </div>
                 </div>
 
-                <button id="upload-widget"
-                    class="upload-btn group relative flex items-center space-x-3 px-10 py-5 bg-gray-600 rounded-2xl font-bold text-lg hover:bg-gray-500 transition-colors">
-                    <i data-lucide="upload" class="w-6 h-6"></i>
-                    <span>Começar Upload</span>
-                </button>
-
-
-                <div id="loading" class="hidden flex items-center space-x-3 text-slate-400 font-medium tracking-wide">
-                    <div class="w-2 h-2 bg-blue-500 rounded-full animate-ping"></div>
-                    <span id="loading-text">Encontrando o momento viral...</span>
+                <div class="flex items-center justify-center">
+                    <button id="upload-widget"
+                        class="upload-btn group relative flex items-center space-x-3 px-10 py-5 bg-gray-600 rounded-2xl font-bold text-lg hover:bg-gray-500 transition-colors whitespace-nowrap">
+                        <i data-lucide="upload" class="w-6 h-6"></i>
+                        <span>Começar Upload</span>
+                    </button>
                 </div>
 
-
-                <div id="error"
-                    class="hidden fixed bottom-10 left-1/2 -translate-x-1/2 px-6 py-3 bg-red-500/10 border border-red-500/20 text-red-400 rounded-full text-sm font-medium backdrop-blur-md">
-                    <div class="flex items-center space-x-2">
-                        <i data-lucide="alert-circle" class="w-4 h-4"></i>
-                        <span id="error-message">Erro ao processar vídeo</span>
-                    </div>
-                </div>
             </div>
 
             <div class="w-full opacity-0 video-el">
+                <div style="margin-top: 20px;">
                 <div class="glass video-glow rounded-[32px] p-2 aspect-video relative group overflow-hidden">
 
                     <div id="placeholder"
@@ -93,6 +84,7 @@
                     <video id="video" src=""
                         class="hidden w-full h-full object-cover rounded-[24px] shadow-2xl relative z-10"
                         controls></video>
+                </div>
                 </div>
             </div>
         </div>
